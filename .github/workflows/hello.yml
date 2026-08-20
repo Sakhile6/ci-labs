@@ -1,16 +1,18 @@
-name: Hello CI # A friendly name shown in the GitHub UI
-on: # WHEN should this workflow run?
- push: # Run every time code is pushed...
- branches: [main] # ...to the main branch
-jobs: # WHAT should this workflow do?
- greet: # Job name (you choose this)
- runs-on: ubuntu-latest # Run on a GitHub-hosted Ubuntu VM
- steps: # The individual commands to run, in order
- - name: Say hello
- run: echo "Hello from GitHub Actions!"
- - name: Show the date
- run: date
- - name: Show the runner OS
- run: uname -a
- - name: List files in the repo
- run: ls -la
+name: Hello CI
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello from GitHub Actions!"
+      - name: Show the date
+        run: date
+      - name: Show the runner OS
+        run: uname -a
+      - name: List files in the repo
+        run: ls -la
